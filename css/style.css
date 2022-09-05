@@ -1,0 +1,500 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background: #ccffff;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.banniere-top {
+  width: 100%;
+  height: 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px 50px;
+  gap: 10px;
+}
+
+.nav-container {
+  background: #9999ff;
+  border-top: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.251);
+}
+.nav-container nav {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-container nav .logo {
+  padding: 25px;
+}
+.nav-container nav .logo img {
+  height: 90px;
+}
+.nav-container nav .container-lien {
+  padding: 50px;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.nav-container nav .container-lien li {
+  cursor: pointer;
+}
+.nav-container nav .container-lien ul {
+  cursor: pointer;
+}
+.nav-container nav .container-lien ul .title i {
+  font-size: 9px;
+  color: lightgray;
+}
+.nav-container nav .container-lien ul .list-of-list {
+  z-index: 10000;
+  width: 75px;
+  position: absolute;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.nav-container nav .container-lien ul .list-of-list li {
+  list-style: none;
+  background: lightgrey;
+  padding: 5px 15px;
+  border-bottom: 1px solid black;
+}
+.nav-container nav .container-lien ul .list-of-list li:hover {
+  background: rgb(255, 255, 255);
+  color: red;
+}
+.nav-container nav .container-lien ul:hover .list-of-list {
+  display: block;
+  opacity: 1;
+  pointer-events: initial;
+}
+
+@media screen and (max-width: 1200px) {
+  .banniere-top {
+    padding: 20px;
+  }
+  .nav-container nav {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .nav-container nav .logo {
+    padding: 0;
+  }
+  .nav-container nav .container-lien {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav-container {
+    padding: 15px 10px;
+  }
+  .nav-container nav {
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-container nav .logo img {
+    height: 60px;
+  }
+  .nav-container nav .container-lien {
+    width: 100%;
+    padding: 20px;
+    gap: 0;
+    flex-direction: column;
+  }
+  .nav-container nav .container-lien li,
+.nav-container nav .container-lien ul {
+    border-top: 1px solid lightgray;
+    padding: 7px 15px;
+  }
+  .nav-container nav .container-lien ul .title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-container nav .container-lien ul .title i {
+    font-size: 9px;
+    color: black;
+  }
+  .nav-container nav .container-lien ul:hover {
+    padding: 0;
+  }
+  .nav-container nav .container-lien ul:hover .title {
+    padding: 7px 15px;
+  }
+  .nav-container nav .container-lien ul:hover .list-of-list {
+    position: inherit;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 420px) {
+  .nav-container {
+    padding: 20px 0;
+  }
+  .nav-container nav {
+    gap: 20px;
+  }
+  .nav-container nav .container-lien {
+    padding: 0;
+  }
+}
+.container-slider {
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.container-slider .swiper {
+  position: relative;
+  max-width: 1200px;
+  height: 500px;
+}
+.container-slider .swiper .swiper-wrapper {
+  height: 460px;
+}
+.container-slider .swiper .swiper-wrapper .swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.container-slider .swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.container-slider .swiper .swiper-pagination .swiper-pagination-bullet {
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+.container-slider .swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background: rgba(0, 0, 0, 0.2);
+}
+.container-slider .swiper .swiper-pagination .swiper-pagination-bullet:hover::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: red;
+}
+.container-slider .swiper .swiper-pagination .swiper-pagination-bullet-active::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: red;
+}
+.container-slider .swiper .button-previous {
+  cursor: pointer;
+  z-index: 1000;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(255, 255, 255);
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.216);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.container-slider .swiper .button-previous:hover {
+  background-color: rgba(255, 0, 0, 0.744);
+}
+.container-slider .swiper .button-next {
+  cursor: pointer;
+  z-index: 1000;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(255, 255, 255);
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.216);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.container-slider .swiper .button-next:hover {
+  background-color: rgba(255, 0, 0, 0.744);
+}
+
+@media screen and (max-width: 700px) {
+  .container-slider {
+    width: 100%;
+    padding: 0px;
+    margin: 0 auto;
+    height: 360px;
+  }
+  .container-slider .swiper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .container-slider .swiper .swiper-wrapper {
+    width: 100%;
+    height: 90%;
+  }
+}
+@media screen and (max-width: 420px) {
+  .container-slider {
+    width: 100%;
+    padding: 20px 5px;
+    margin: 0 auto;
+    height: auto;
+  }
+  .container-slider .swiper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .container-slider .swiper .swiper-wrapper {
+    width: 100%;
+    height: 90%;
+  }
+}
+section {
+  background: #fff;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.505);
+  border-top: 1px solid rgba(0, 0, 0, 0.505);
+}
+section .container-cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+section .container-cards .card .card-top {
+  display: flex;
+  background: #9999ff;
+  gap: 10px;
+  padding: 10px;
+}
+section .container-cards .card .card-top h3 {
+  color: #fff;
+}
+section .container-cards .card .card-bottom {
+  padding: 10px 0;
+}
+section .container-cards .card .card-bottom .text {
+  color: rgba(0, 0, 0, 0.537);
+}
+section .container-cards .card .card-bottom .more-info-btn a {
+  padding-top: 10px;
+  text-decoration: none;
+  color: red;
+}
+section .container-destinations {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+section .container-destinations .destination-title {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgray;
+}
+section .container-destinations .container-flags {
+  width: 100%;
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+section .container-destinations .container-flags .flag {
+  width: 100%;
+}
+section .container-destinations .container-flags .flag .flag-image {
+  width: 100%;
+  border: 1px solid black;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+section .container-destinations .container-flags .flag .flag-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 700px) {
+  section .container-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 30px;
+  }
+  section .container-cards .card {
+    width: 100%;
+  }
+  section .container-destinations .container-flags {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  section .container-destinations .container-flags .flag {
+    width: 100%;
+  }
+  section .container-destinations .container-flags .flag.display-none {
+    display: none;
+  }
+}
+@media (max-width: 420px) {
+  section .container-cards {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px 5px;
+  }
+  section .container-cards .card {
+    width: 100%;
+  }
+  section .container-destinations {
+    padding: 20px 5px;
+  }
+}
+.container-information {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+.container-information .about-us {
+  max-width: 600px;
+}
+.container-information .about-us .about-us-title {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.container-information .about-us .about-us-texte p {
+  padding: 10px 0;
+}
+.container-information .why-us {
+  max-width: 600px;
+}
+.container-information .why-us .why-us-title {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.container-information .why-us .why-us-card {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+}
+.container-information .why-us .why-us-card .why-us-img {
+  width: 100px;
+}
+.container-information .why-us .why-us-card .why-us-img img {
+  width: 100px;
+}
+
+.container-how-to-travel {
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+.container-how-to-travel .how-to-title {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.container-how-to-travel .how-to-texte p {
+  padding: 10px 0;
+}
+.container-how-to-travel .how-to-btn button {
+  padding: 5px;
+  border-radius: 2px;
+  border: 1px solid black;
+  background: #7fab68;
+  color: #fff;
+  transition: 0.3s;
+}
+.container-how-to-travel .how-to-btn button:hover {
+  background: #9acf7e;
+}
+
+footer {
+  background: #9999ff;
+  border-top: 1px solid black;
+}
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+footer .copyrights {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: rgba(0, 0, 0, 0.506);
+}
+
+@media screen and (max-width: 700px) {
+  .container-information {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 420px) {
+  .container-information {
+    padding: 20px 5px;
+  }
+  .container-how-to-travel {
+    padding: 20px 5px;
+  }
+  footer ul {
+    padding-left: 5px;
+  }
+  footer .copyrights {
+    padding: 30px 5px;
+  }
+}/*# sourceMappingURL=style.css.map */
